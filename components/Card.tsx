@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import {
   Item,
@@ -15,12 +17,13 @@ type CardProps = {
 }
 
 export default function Card({ id, title, shortCode, rest }: CardProps) {
+  const shortUrl = `${process.env.NEXT_PUBLIC_API_URL}${shortCode}`
   return (
     <Item variant="outline" {...rest}>
       <ItemContent>
         <ItemTitle aria-label="card title">{title}</ItemTitle>
         <ItemDescription aria-label="card description">
-          https://shortly.com/{shortCode}
+          {shortUrl}
         </ItemDescription>
       </ItemContent>
       <ItemActions>

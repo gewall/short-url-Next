@@ -4,8 +4,8 @@ import { Mail, Paperclip } from "lucide-react"
 
 export default function Footer() {
   return (
-    <div className="bottom-0 mt-16 max-h-56 min-h-48 bg-cyan-950 text-primary-foreground">
-      <Container className="py-6">
+    <div className="mt-16 max-h-56 min-h-48 bg-cyan-950 py-6 text-primary-foreground">
+      <Container className="">
         <div className="flex flex-col justify-between gap-2 md:flex-row">
           <div className="flex flex-col justify-start">
             <h5 className="text-lg font-semibold" aria-label="footer label">

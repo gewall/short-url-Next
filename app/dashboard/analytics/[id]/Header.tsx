@@ -70,23 +70,24 @@ export default function Header({ id }: HeaderProps) {
   }
 
   return (
-    <div className="h-max-28 h-min-20 flex h-24 items-start justify-between rounded-sm border px-4 py-2">
+    <div className="flex max-w-screen flex-col items-start justify-between gap-4 rounded-sm border px-4 py-2">
       <div className="flex h-full flex-col items-start justify-between">
         <h4 className="text-lg font-semibold" data-testid="title">
           {data.payload?.title}
         </h4>
         <h5 className="text-lg" data-testid="short-code">
-          https://shortly.com/{data.payload?.shortCode}
+          {process.env.NEXT_PUBLIC_API_URL}
+          {data.payload?.shortCode}
         </h5>
         <NextLink
           href={data.payload?.originalUrl}
-          className="text-blue-400 underline"
+          className="break-all text-blue-400 underline"
           data-testid="original-url"
         >
           {data.payload?.originalUrl}
         </NextLink>
       </div>
-      <div className="flex h-full flex-col items-end justify-between">
+      <div className="flex w-full items-end justify-between">
         <div className="flex gap-2">
           <Dialog>
             <DialogTrigger

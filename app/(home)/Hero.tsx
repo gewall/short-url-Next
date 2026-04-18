@@ -97,7 +97,7 @@ export default function Hero({ content }: HeroProps) {
             </form>
             <p className="mt-2 text-sm text-muted-foreground">Result :</p>
             <div className="rounded-md bg-accent p-4">
-              https://shortle.com/{code}
+              {process.env.NEXT_PUBLIC_API_URL}/{code}
             </div>
           </CardContent>
         </Card>
