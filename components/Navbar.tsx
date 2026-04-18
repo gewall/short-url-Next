@@ -30,7 +30,8 @@ export default function Navbar() {
   const router = useRouter()
 
   useEffect(() => {
-    // if (user.accessToken === "") return
+    if (user.accessToken === "") return
+    if (user.username === "") router.push("/login")
     ;(async () => {
       const req = await getLinks(user.accessToken)
       if (!req.success) {
